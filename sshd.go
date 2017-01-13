@@ -270,7 +270,7 @@ func keyAuthCallback(conn ssh.ConnMetadata, key ssh.PublicKey) (*ssh.Permissions
 }
 
 func main() {
-	generateSshKey()
+	//generateSshKey()
 	sshConfig := &ssh.ServerConfig{
 		PasswordCallback:  passAuthCallback,
 		PublicKeyCallback: keyAuthCallback,

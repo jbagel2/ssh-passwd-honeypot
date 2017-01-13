@@ -74,9 +74,9 @@ func (login *SshLogin) Save() {
 func PostToApi(endpoint string, post_data *strings.Reader) {
 	server_url := os.Getenv("SERVER_URL")
 	if server_url == "" {
-		server_url = "https://sshpot.com"
+		server_url = "http://localhost:9200/ssh_honeypot"
 	}
-	ssh_api := fmt.Sprintf("%s/api/%s", server_url, endpoint)
+	ssh_api := fmt.Sprintf("%s/%s", server_url, endpoint)
 	req, err := http.NewRequest("POST", ssh_api, post_data)
 	log.Println(fmt.Sprintf("[post] %s", ssh_api))
 
